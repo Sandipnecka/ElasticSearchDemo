@@ -2,7 +2,12 @@ package com.company;
 
 import org.elasticsearch.action.get.GetRequestBuilder;
 import org.elasticsearch.action.get.GetResponse;
+import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
+import org.elasticsearch.index.query.FilterBuilders;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.aggregations.AggregationBuilders;
+import org.elasticsearch.search.aggregations.bucket.filters.Filters;
 
 public class Main {
 
@@ -114,20 +119,8 @@ public class Main {
          System.out.println(valueCount.getValue());
 
  */
-      /*   SearchResponse searchResponse2 = client.prepareSearch()
-                 .setQuery(QueryBuilders.matchAllQuery())
-                 .addAggregation(AggregationBuilders.filters("filters").filter(
-                         FilterBuilders.rangeFilter("age").from(12).to(29)
-                 )).execute().actionGet();
+       
 
-            Filters  filters = searchResponse2.getAggregations().get("filters");
-
-               for(Filters.Bucket bucket : filters.getBuckets()){
-
-                  System.out.println(bucket.getKey());
-
-               }
-    */
 
 
     }
